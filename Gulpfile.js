@@ -4,7 +4,6 @@ const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 
-// Compilar SASS
 gulp.task('sass', function () {
   return gulp
     .src('src/sass/**/*.scss')
@@ -12,7 +11,6 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('dist/css'));
 });
 
-// Comprimir imagens
 gulp.task('imagemin', function () {
   return gulp
     .src('src/images/**/*')
@@ -20,7 +18,6 @@ gulp.task('imagemin', function () {
     .pipe(gulp.dest('dist/images'));
 });
 
-// Comprimir JavaScript
 gulp.task('scripts', function () {
   return gulp
     .src('src/js/**/*.js')
@@ -29,5 +26,4 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('dist/js'));
 });
 
-// Tarefa padrão
 gulp.task('default', gulp.parallel('sass', 'imagemin', 'scripts'));
